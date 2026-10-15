@@ -46,8 +46,7 @@ public class MainActivity extends Activity {
                 message.setVisibility(View.GONE);
             }
         });
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl(PANEL_URL);
+        webView.setWebChromeClient(new WebChromeClient())
         message = new TextView(this);
         message.setTextColor(Color.rgb(90, 25, 50));
         message.setBackgroundColor(Color.WHITE);
@@ -59,7 +58,8 @@ public class MainActivity extends Activity {
         root.addView(message, new FrameLayout.LayoutParams(-1, -1));
         setContentView(root);
     }
-
+        setContentView(root);
+        webView.loadUrl(PANEL_URL);
     @Override public void onBackPressed() {
         if (webView != null && webView.canGoBack()) webView.goBack();
         else super.onBackPressed();
